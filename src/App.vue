@@ -2,12 +2,24 @@
   <div class="app">
     <header>
       <div class="title">
-        <h1>Job List</h1>
+        <a-typography-title>Job List</a-typography-title>
       </div>
       <div class="order">
-        <button @click="handleClick('title')">order by title</button>
-        <button @click="handleClick('salary')">order by salary</button>
-        <button @click="handleClick('location')">order by location</button>
+        <a-button @click="handleClick('title')" type="block">
+          order by title</a-button
+        >
+        <a-divider type="vertical" />
+        <a-button @click="handleClick('salary')" type="block"
+          >order by salary</a-button
+        >
+        <a-divider type="vertical" />
+        <a-button @click="handleClick('location')" type="block"
+          >order by location</a-button
+        >
+
+        <!-- <button @click="handleClick('title')">order by title</button> -->
+        <!-- <button @click="handleClick('salary')">order by salary</button> -->
+        <!-- <button @click="handleClick('location')">order by location</button> -->
       </div>
     </header>
     <JobList :jobs="jobs" :order="order" />
@@ -68,31 +80,28 @@ export default defineComponent({
 </script>
 
 <style>
-  header {
-    text-align: center;
-  }
-  header .order {
-    margin-top: 20px;
-  }
-  button {
-    margin: 0 10px;
-    color: #1195c9;
-    border: 3px solid #1195c9;
-    background: #d5f0ff;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  header .title{
-    display: flex;
-    justify-content: center;
-  }
-  header img {
-    width: 60px;
-    margin-right: 20px;
-  }
-  header h1 {
-    font-size: 3em;
-  }
+header {
+  text-align: center;
+}
+header .order {
+  margin-top: 20px;
+}
+.order {
+  margin: 20px auto;
+}
+
+a-button {
+  margin-right: 20px;
+}
+header .title {
+  display: flex;
+  justify-content: center;
+}
+header img {
+  width: 60px;
+  margin-right: 20px;
+}
+.title {
+  margin-top: 30px;
+}
 </style>
